@@ -1,7 +1,12 @@
 <script src="{{ '/assets/js/example-element.js' | absolute_url }}" async></script>
 
 <example-element id="ee" data-example-one="data 1" data-example-two="data 2">
-  <div data-element="ee.example">
+  <div data-ee:target="example">
     Example El
   </div>
+
+  <input type="text" data-ee:target="input" data-ee:model="test-model" value="" />
+
+  <span data-ee:bind="test-model"></span>
+
 </example-element>
