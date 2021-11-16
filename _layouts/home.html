@@ -57,6 +57,7 @@ layout: default
         {%- assign tags = site.posts | all_tags -%}
         {%- for tag in tags -%}
           <li>
+            [{{ tag | json }}]
             {% assign tag_slug = tag['name'] | slugify: "raw" %}
             <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
               {{ tag['name'] }} ({{ tag['count'] }})
