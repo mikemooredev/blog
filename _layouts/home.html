@@ -54,15 +54,16 @@ layout: default
     <div class="all-tags e-content">
       All Tags:
       <ul>
-        {%- assign tags = site.posts | all_tags -%}
-        {%- for tag in tags -%}
+        {%- for tag in site.tags -%}
+          {%- if tag[1].size > 0 -%}
           <li>
-            [{{ tag | json }}]
-            {% assign tag_slug = tag['name'] | slugify: "raw" %}
-            <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
-              {{ tag['name'] }} ({{ tag['count'] }})
+            {%- assign tag_name = tag[0] -%}
+            {%- assign tag_slug = tag_name | slugify: "raw" -%}
+            <a class="tag-link" href={{ site.baseurl | append: "/tagged/" | append: tag_slug | append: "/" }} rel="category tag">
+              {{ tag_name }} ({{ tag[1] | size }})
             </a>
           </li>
+          {%- endif -%}
         {%- endfor -%}
       </ul>
     </div>

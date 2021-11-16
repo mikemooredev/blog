@@ -29,18 +29,21 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-
+  
   <div class="post-tags e-content">
     Tags:
     <ul>
-      {%- assign tags = site.posts | where: "slug", page.slug | all_tags -%}
-      {%- for tag in tags -%}
+      {%- for tag in site.tags -%}
+        {%- assign posts = tag[1] | where: "slug", page.slug -%}
+        {%- if posts.size > 0 -%}
         <li>
-          {% assign tag_slug = tag['name'] | slugify: "raw" %}
-          <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
-            {{ tag['name'] }} ({{ tag['count'] }})
-          </a>
+          {%- assign tag_name = tag[0] -%}
+          {%- assign tag_slug = tag_name | slugify: "raw" -%}          
+          <a class="tag-link" href={{ site.baseurl | append: "/tagged/" | append: tag_slug | append: "/" }} rel="category tag">
+            {{ tag_name }} ({{ tag[1] | size }})
+          </a>          
         </li>
+        {%- endif -%}
       {%- endfor -%}
     </ul>
   </div>

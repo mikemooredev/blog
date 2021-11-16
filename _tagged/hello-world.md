@@ -1,4 +1,4 @@
 ---
-layout: tags
+layout: tagged
 tag-name: hello-world
 ---
