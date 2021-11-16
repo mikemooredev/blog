@@ -30,9 +30,23 @@ layout: default
     {{ content }}
   </div>
 
+  <div class="post-tags e-content">
+    Tags:
+    <ul>
+      {%- assign tags = site.posts | where: "slug", page.slug | all_tags -%}
+      {%- for tag in tags -%}
+        <li>
+          {% assign tag_slug = tag['name'] | slugify: "raw" %}
+          <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+            {{ tag['name'] }} ({{ tag['count'] }})
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
