@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to create an array in Shopify\'s Liquid"
+title: "How to create an array in Shopify's Liquid"
 tags: shopify liquid
 comments: true
 ---
