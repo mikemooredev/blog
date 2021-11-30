@@ -1,0 +1,16 @@
+/*
+|--------------------------------------------------------------------------
+| Layout
+|--------------------------------------------------------------------------
+*/
+
+.lyt-body {
+  padding-right: var(--Gutter);
+  padding-left: var(--Gutter);
+}
+
+.lyt-container {
+  width: 700px;
+  max-width: 100%;
+  margin: var(--Gutter_Large) auto;
+}

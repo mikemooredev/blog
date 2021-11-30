@@ -1,0 +1,49 @@
+:root {
+  /*
+  |--------------------------------------------------------------------------
+  | Fonts
+  |--------------------------------------------------------------------------
+  */
+  --Font_Family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+  --Font_Size: 14px;
+
+  --Font_Size-h1: 24px;
+  --Font_Size-h2: 20px;
+  --Font_Size-h3: 18px;
+  --Font_Size-h4: 16px;
+  --Font_Size-h5: 14px;
+  
+  /*
+  |--------------------------------------------------------------------------
+  | Colors
+  |--------------------------------------------------------------------------
+  */
+  --Color_Grey: #cccccc;
+  --Color_Grey-light: #eeeeee;
+  --Color_Grey-dark: #aaaaaa;
+
+  --Color_Black: #333333;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Gutters
+  |--------------------------------------------------------------------------
+  */
+  --Gutter: 12px;
+  --Gutter_Small: calc(var(--Gutter) / 1.5);
+  --Gutter_Large: calc(var(--Gutter) * 2);
+}
+@media only screen and (min-width: 901px) {
+  :root {
+    /*
+    |--------------------------------------------------------------------------
+    | Gutters
+    |--------------------------------------------------------------------------
+    */
+    --Gutter: 24px;
+  }
+}
+
+body {
+  color: var(--Color_Black);
+}
