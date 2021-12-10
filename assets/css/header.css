@@ -1,0 +1,23 @@
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+*/
+
+.hd-header {
+  border-bottom: 1px solid var(--Color_Grey);
+  display: flex;
+  padding-top: var(--Gutter-small);
+  padding-bottom: var(--Gutter-small);
+}
+
+.hd-inner {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hd-title {
+  color: var(--Color_Black);
+  text-decoration: none;
+}

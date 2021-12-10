@@ -1,0 +1,12 @@
+{%- if include.stylesheets != blank -%}
+{%- assign stylesheet_array = include.stylesheets | split: "," -%}
+{%- for stylesheet in stylesheet_array -%}
+  {%- assign css_file = "/assets/css/" | append: stylesheet | append: ".css" | absolute_url -%}
+  {%- if include.defer -%}
+    <link rel="preload" href="{{- css_file -}}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="{{- css_file -}}" /></noscript>
+  {%- else -%}
+    <link rel="stylesheet" href="{{- css_file -}}" />
+  {%- endif -%}
+{%- endfor -%}
+{%- endif -%}

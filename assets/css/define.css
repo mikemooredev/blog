@@ -1,0 +1,81 @@
+:root {
+  /*
+  |--------------------------------------------------------------------------
+  | Fonts
+  |--------------------------------------------------------------------------
+  */
+  --Font_Family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+  --Font_Size: 14px;
+
+  --Font_Size-h1: 24px;
+  --Font_Size-h2: 20px;
+  --Font_Size-h3: 18px;
+  --Font_Size-h4: 16px;
+  --Font_Size-h5: 14px;
+  
+  /*
+  |--------------------------------------------------------------------------
+  | Colors
+  |--------------------------------------------------------------------------
+  */
+  --Color_Grey: #dddddd;
+  --Color_Grey-light: #eeeeee;
+  --Color_Grey-dark: #aaaaaa;
+
+  --Color_Black: #333333;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Gutters
+  |--------------------------------------------------------------------------
+  */
+  --Gutter: 12px;
+  --Gutter-small: calc(var(--Gutter) / 1.5);
+  --Gutter-large: calc(var(--Gutter) * 2);
+}
+@media only screen and (min-width: 901px) {
+  :root {
+    /*
+    |--------------------------------------------------------------------------
+    | Gutters
+    |--------------------------------------------------------------------------
+    */
+    --Gutter: 24px;
+  }
+}
+
+body {
+  color: var(--Color_Black);
+}
+
+.svg-icon {
+  height: 16px;
+  width: 16px;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+a::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid currentColor;
+  opacity: 0;
+  transition: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  will-change: opacity;
+  transform: translateY(-0.1em);
+}
+a:hover::after,
+a:focus::after {
+  opacity: 1;
+}
+
+h1,h2,h3,h4,h5 {
+  marign-top: 0.4em;
+  margin-bottom: 0.4em; 
+}

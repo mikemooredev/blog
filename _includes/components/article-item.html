@@ -1,0 +1,11 @@
+<li class="art-item">
+  <span class="art-meta">{{ post.date | date: include.date_format }}</span>
+  <h3 class="art-title fs-h2">
+    <a class="art-link" href="{{ post.url | relative_url }}">
+      {{ post.title | escape }}
+    </a>
+  </h3>
+  {%- if post.excerpt -%}
+  <p class="art-excerpt">{{ post.excerpt | strip_html }}</p>
+  {%- endif -%}
+</li>

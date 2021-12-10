@@ -1,0 +1,36 @@
+/*
+|--------------------------------------------------------------------------
+| Socials
+|--------------------------------------------------------------------------
+*/
+
+.sl-list {
+  display: flex;
+  grid-gap: var(--Gutter);
+  margin-bottom: var(--Gutter);
+}
+
+.sl-item {
+  position: relative;
+  display: block;
+}
+
+.sl-link {
+  display: flex;
+  justify-content: center;
+}
+
+.sl-link::after {
+  content: "";
+  display: block;
+  background-color: var(--Color_Grey);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-bottom: 0;
+  z-index: -1;
+}

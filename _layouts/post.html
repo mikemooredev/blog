@@ -1,51 +1,41 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+{%- include stylesheets.html stylesheets="highlight" defer=true -%}
+
+<article class="art-article">
+
+  <header class="art-header">
+    <p class="art-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <time class="art-date_published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
       {%- if page.modified_date -%}
         ~ 
         {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+        <time class="art-date_modified" datetime="{{ mdate }}">
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
       {%- if page.author -%}
         • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+          <span class="art-author">
+            <span class="art-author_name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
+      {%- endif -%}
+    </p>
+    <h1 class="art-title fs-h1">{{ page.title | escape }}</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="art-body util-richtext">
     {{ content }}
   </div>
   
-  <div class="post-tags e-content">
-    Tags:
-    <ul>
-      {%- for tag in site.tags -%}
-        {%- assign posts = tag[1] | where: "slug", page.slug -%}
-        {%- if posts.size > 0 -%}
-        <li>
-          {%- assign tag_name = tag[0] -%}
-          {%- assign tag_slug = tag_name | slugify: "raw" -%}          
-          <a class="tag-link" href={{ site.baseurl | append: "/tagged/" | append: tag_slug | append: "/" }} rel="category tag">
-            {{ tag_name }} ({{ tag[1] | size }})
-          </a>          
-        </li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
+  <div class="art-tags">
+    {%- include components/tags.html title="Tags:" page_slug=page.slug -%}
   </div>
 
   {%- if page.comments -%}
