@@ -8,7 +8,36 @@
   display: block;
   position: sticky;
   top: 100vh;
+}
 
-  height: 100px;
-  max-height: 100px;
+.ft-columns {
+  display: grid;
+}
+@media only screen and (min-width: 768px) {
+  .ft-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ft-column {
+  margin-bottom: var(--Gutter);
+}
+
+@media only screen and (min-width: 768px) {
+  .ft-column:first-child {
+    order: 1;
+  }
+  .ft-column:last-child {
+    order: 0;
+  } 
+}
+
+.ft-socials {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.ft-subscribe {
+  margin-top: 2px;
 }

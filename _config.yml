@@ -4,7 +4,7 @@ author:
   email:
   website: https://mikemoore.dev/
 description: > # this means to ignore newlines until "show_excerpts:"
-  The blog of mikemooredev, powered by Jekyll, hosted with GitHub Pages.
+  The blog of mikemooredev, powered by Jekyll and GitHub Pages.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 

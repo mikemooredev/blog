@@ -1,0 +1,6 @@
+<ul class="art-list">
+  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  {%- for post in posts -%}
+    {%- include components/article-item.html post=post date_format=date_format -%}
+  {%- endfor -%}
+</ul>

@@ -1,0 +1,36 @@
+/*
+|--------------------------------------------------------------------------
+| Articles
+|--------------------------------------------------------------------------
+*/
+
+/*
+|--------------------------------------------------------------------------
+| List Item
+|--------------------------------------------------------------------------
+*/
+.art-item {
+  margin-bottom: var(--Gutter);
+  padding-bottom: var(--Gutter);
+  border-bottom: 1px solid var(--Color_Grey-light);
+}
+
+.art-meta {
+  color: var(--Color_Grey-dark);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Article
+|--------------------------------------------------------------------------
+*/
+
+.art-body {
+  margin-top: var(--Gutter);
+  margin-bottom: var(--Gutter);
+  padding-top: var(--Gutter);
+  padding-bottom: var(--Gutter);
+
+  border-top: 1px solid var(--Color_Grey-light);
+  border-bottom: 1px solid var(--Color_Grey-light);
+}

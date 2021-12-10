@@ -25,6 +25,7 @@ html, body {
 }
 * {
   box-sizing: border-box;
+  color: inherit;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -47,4 +48,15 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+pre {
+  display: block;
+  border-radius: 6px;
+  overlflow: hidden;
 }

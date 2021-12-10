@@ -29,3 +29,58 @@
 .fs-h5 {
   font-size: var(--Font_Size-h5);
 }
+
+/*
+|--------------------------------------------------------------------------
+| Screen Reader Text
+|--------------------------------------------------------------------------
+*/
+
+.util-screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Richtext
+|--------------------------------------------------------------------------
+*/
+
+.util-richtext p {
+  marign-top: 1em;
+  margin-bottom: 1em;
+}
+  
+.util-richtext p:last-of-type {
+  marign-top: 1em;
+  margin-bottom: 0em;
+}
+
+.util-richtext h1 {
+  font-size: var(--Font_Size-h1);
+}
+
+.util-richtext h2 {
+  font-size: var(--Font_Size-h2);
+}
+
+.util-richtext h3 {
+  font-size: var(--Font_Size-h3);
+}
+
+.util-richtext h4 {
+  font-size: var(--Font_Size-h4);
+}
+
+.util-richtext h5 {
+  font-size: var(--Font_Size-h5);
+}

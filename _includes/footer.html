@@ -4,14 +4,12 @@
   <div class="ft-inner lyt-container">
 
     <div class="ft-columns">
-      <div class="ft-column">
 
-        <p class="ft-subscribe">
-          <a href="{{ 'feed.xml' | relative_url }}">
-            {%- include icons/rss.html -%}
-            <span>Subscribe</span>
-          </a>
-        </p>
+      <div class="ft-column">
+        <p>{{ site.description | escape }}</p>
+      </div>
+      
+      <div class="ft-column">
 
         {%- if site.author %}
           <ul class="ft-contacts">
@@ -26,16 +24,20 @@
             {%- endif %}
           </ul>
         {%- endif %}
-      </div>
 
-      <div class="ft-column">
-        <p>{{ site.description | escape }}</p>
+        <p class="ft-subscribe">
+          <a href="{{ 'feed.xml' | relative_url }}">
+            {%- include icons/rss.html -%}
+            <span class="util-screen-reader-text">Subscribe</span>
+          </a>
+        </p>
+        
       </div>
 
     </div>
 
     <div class="ft-socials">
-      {%- include social.html -%}
+      {%- include components/socials.html -%}
     </div>
 
   </div>

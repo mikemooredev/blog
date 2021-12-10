@@ -5,15 +5,19 @@
 */
 
 .hd-header {
-  border-bottom: 1px solid var(--Color_Grey-light);
+  border-bottom: 1px solid var(--Color_Grey);
   display: flex;
-  justify-content: center;
-  padding-top: var(--Gutter_Small);
-  padding-bottom: var(--Gutter_Small);
+  padding-top: var(--Gutter-small);
+  padding-bottom: var(--Gutter-small);
+}
+
+.hd-inner {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .hd-title {
-  margin: 0 auto;
   color: var(--Color_Black);
   text-decoration: none;
 }

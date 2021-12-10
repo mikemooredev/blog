@@ -3,12 +3,23 @@ layout: default
 ---
 
 <div class="snippets">
-  <h1 class="snippets-heading">Articles tagged with "{{ page.tag-name }}"</h1>
 
+  {%- assign item_count = 0 -%}
+  {%- capture post_items -%}
   {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
   {%- for post in site.posts -%}
     {%- if post.tags contains page.tag-name -%}
       {%- include components/article-item.html post=post date_format=date_format -%}
+      {%- assign item_count = item_count | plus: 1 -%}
     {%- endif -%}
   {%- endfor -%}
+  {%- endcapture -%}
+
+  <h1 class="fs-h1">Article(s) tagged with "{{ page.tag-name }}" - {{ item_count }}</h1>
+
+  {% if item_count %}
+  <ul class="art-list">
+  {{- post_items -}}
+  </ul>
+  {% endif %}
 </div>

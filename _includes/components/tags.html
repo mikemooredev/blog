@@ -1,7 +1,19 @@
+{%- include stylesheets.html stylesheets="tags" defer=true -%}
+
 <section class="tg-tags">
-  All Tags:
+  <h4 class="tg-title fs-h4">
+    {{- include.title | default: "All Tags:" -}}    
+  </h4>
   <ul class="tg-list">
     {%- for tag in site.tags -%}
+
+      {%- if include.page_slug -%}
+        {%- assign posts = tag[1] | where: "slug", include.page_slug -%}
+        {%- if posts.size < 1 -%}
+          {%- continue -%}
+        {%- endif -%}          
+      {%- endif -%}
+
       {%- if tag[1].size > 0 -%}
       <li class="tg-item">
         {%- assign tag_name = tag[0] -%}
